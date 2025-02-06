@@ -58,15 +58,16 @@ where the full description of the keys in the above `json` file is given below:
 
 Supported generators
 ********************
-`pysdg` supports the following generators:
+`pysdg` supports the following generators with their source links:
 
 1. "replica_seq". This a proprietary generator that requires the users to have their own license from `Aetion <https://aetion.com/>`_ (previously `Replica Analytics <https://news.aetion.com/aetion-acquires-synthetic-data-trailblazer-replica-analytics>`_).
 2. `"synthcity_bayesian_network" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_bayesian_network.html>`_.
 3. `"synthcity_ctgan" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_ctgan.html>`_.
-4. `"synthcity_nflow" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_nflow.html>`_
+4. `"synthcity_tvae" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_tvae.html>`_
 5. `"synthcity_rtvae" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_rtvae.html>`_
-6. `"synthcity_tvae" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_tvae.html>`_
-7. `"synthcity_arf" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_goggle.html>`_
+6. `"synthcity_arf" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_goggle.html>`_
+7. `"synthcity_nflow" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_nflow.html>`_
+
 
 
 Generating synthetic datasets in Python
@@ -93,9 +94,11 @@ Here's an example demonstrating how to use `pysdg` in `Python`:
         gen=Generator(gen_name) # Construct the generator object
         real=gen.load(raw_data_path,raw_info_path) # Load raw data and its info.
         gen.train() # Train the selected generative model.
-        gen.gen(no_obsvs=len(real), no_synths=2) # Generate a list of multiple synthetic datasets.
+        gen.gen(num_rows=len(real), num_synths=2) # Generate a list of multiple synthetic datasets.
         synths=gen.unload() # Unload the generated synthetic datasets.
         synth[0].to_csv('synthetic_data.csv', index=False) # If needed, save the first synthetic dataset. Replace teh file name with your own.
+
+.. note:: The above code snippets are illustrative and may require modifications to work with your own data.
         
 
 Generating synthetic datasets in R
@@ -120,10 +123,8 @@ Here's an example demonstrating how to use `pysdg` in `R`:
     gen <- synth.generate$Generator(gen_name) # Construct the generator object
     real <- gen$load( data_path, info_path) # Load raw data and its info.
     gen$train() # Train the selected generative model.
-    gen$gen(no_obsvs=nrow(soul), no_synths=2) # Generate a list of multiple synthetic datasets.
+    gen$gen(num_rows=nrow(soul), num_synths=2) # Generate a list of multiple synthetic datasets.
     synths <- gen$unload() # Unload the generated synthetic datasets.
     print(head(synths[[1]])) # If needed, save the first synthetic dataset. Replace the file name with your own.
 
-Calculating privacy risks
-*************************
-*Pending... In the meantime, please regularly check the tutorial files.*
+.. note:: The above code snippets are illustrative and may require modifications to work with your own data.

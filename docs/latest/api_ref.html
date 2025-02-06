@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. API reference &mdash; pysdg 2.3.0 documentation</title>
+  <title>4. API reference &mdash; pysdg 2.4.3a1.dev0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c3c8ae58"></script>
+      <script src="_static/documentation_options.js?v=07e4fbb1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -70,10 +70,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#pysdg.synth.metrics.combine_estimates"><code class="docutils literal notranslate"><span class="pre">combine_estimates()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pysdg.synth.metrics.compare_estimates"><code class="docutils literal notranslate"><span class="pre">compare_estimates()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pysdg.privacy.mmbrshp.calc_mmbrshp_risk"><code class="docutils literal notranslate"><span class="pre">calc_mmbrshp_risk()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pysdg.privacy.mmbrshp.MmbrshpRsk"><code class="docutils literal notranslate"><span class="pre">MmbrshpRsk</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pysdg.privacy.mmbrshp.MmbrshpRsk.calc_risk"><code class="docutils literal notranslate"><span class="pre">MmbrshpRsk.calc_risk()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#pysdg.privacy.attr.get_replica_risk"><code class="docutils literal notranslate"><span class="pre">get_replica_risk()</span></code></a></li>
 </ul>
 </li>
@@ -111,15 +107,16 @@
 <span id="api-ref"></span><h1><span class="section-number">4. </span>API reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="pysdg.synth.generate.Generator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pysdg.synth.generate.</span></span><span class="sig-name descname"><span class="pre">Generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysdg.synth.generate.Generator" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pysdg.synth.generate.</span></span><span class="sig-name descname"><span class="pre">Generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'dummy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysdg.synth.generate.Generator" title="Link to this definition"></a></dt>
 <dd><p>A class for synthetic data generation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gen_name</strong> – The name of the generator.</p></li>
-<li><p><strong>num_cores</strong> – The maximum number of cores. If None, all available cores will be used.</p></li>
-<li><p><strong>work_dir</strong> – User-defined work directory to which some processes may save temprary files and directories. The default is to use current working directory.</p></li>
-<li><p><strong>log_filename</strong> – A name for the log file that to be created in work_dir. If None, logging to file will be disabled.</p></li>
+<li><p><strong>num_cores</strong> – The maximum number of cores. If None, all available cores will be used. You may need to set that to a specific number for some generators such as the Bayesian network generator in SynthCity.where exploiting all available cores may cause memory issues.</p></li>
+<li><p><strong>work_dir</strong> – User-defined work directory to which some processes may save temporary files and directories. Also, the model artifact will be saved to this directory if needed. By default, this directory is created in the current working directory and it starts with ‘pysdg’.</p></li>
+<li><p><strong>save_model</strong> – A boolean whether or not to save the model artifact. If True, the model artifact will be saved to work_dir. Default is False.</p></li>
+<li><p><strong>log_to_file</strong> – A boolean whether or not to save teh log file. If True, the pysdg.log file will be saved to  work_dir. Default is False.</p></li>
 </ul>
 </dd>
 </dl>
@@ -164,7 +161,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pysdg.synth.generate.Generator.unload">
-<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.synth.generate.Generator.unload" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">purge_enabled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.synth.generate.Generator.unload" title="Link to this definition"></a></dt>
 <dd><p>Safely unloads the generated encoded synthetic dataset versions (synths).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -175,7 +172,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pysdg.synth.generate.Generator.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysdg.synth.generate.Generator.train" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pysdg.synth.generate.Generator.train" title="Link to this definition"></a></dt>
 <dd><p>Trains the generator using the encoded real or the input dataset. To avoid training errors, make sure to use the load method first.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -186,7 +183,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pysdg.synth.generate.Generator.gen">
-<span class="sig-name descname"><span class="pre">gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_obsvs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.synth.generate.Generator.gen" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_obsvs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pysdg_vault_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.synth.generate.Generator.gen" title="Link to this definition"></a></dt>
 <dd><p>Generates multiple synthetic datasets (synths) from the trained generative model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -195,6 +192,7 @@
 <li><p><strong>num_synths</strong> – The target number of required synthetic versions (synths) where each ‘synth’ has the same number of the target no_obsv.</p></li>
 <li><p><strong>no_obsvs</strong> – Deprecated. Use num_rows instead.</p></li>
 <li><p><strong>no_synths</strong> – Deprecated. Use num_synths instead.</p></li>
+<li><p><strong>pkl_path</strong> – The pickle file path that contains the model artifact. If provided, the model will be loaded from this file.</p></li>
 </ul>
 </dd>
 </dl>
@@ -286,13 +284,13 @@ keeping important system libraries and functions intact.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pysdg.synth.metrics.compare_estimates">
-<span class="sig-prename descclassname"><span class="pre">pysdg.synth.metrics.</span></span><span class="sig-name descname"><span class="pre">compare_estimates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gt_vec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syn_vec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h0_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#pysdg.synth.metrics.compare_estimates" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pysdg.synth.metrics.</span></span><span class="sig-name descname"><span class="pre">compare_estimates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_vec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">synth_vec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h0_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#pysdg.synth.metrics.compare_estimates" title="Link to this definition"></a></dt>
 <dd><p>Compares the decisions based on real and synthetic data and calculates their confidence interval overlap.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>gt_vec</strong> – A tuple of ground truth estimate and its standard error.</p></li>
-<li><p><strong>syn_vec</strong> – A tuple of synthetic estimate and it standard error.</p></li>
+<li><p><strong>real_vec</strong> – A tuple of ground truth estimate and its standard error.</p></li>
+<li><p><strong>synth_vec</strong> – A tuple of synthetic estimate and it standard error.</p></li>
 <li><p><strong>h0_value</strong> – The specific value that is being tested against. This is typically equal to zero (no effect) when  testing regression coefficients.</p></li>
 <li><p><strong>alpha</strong> – Significance level.</p></li>
 </ul>
@@ -310,57 +308,53 @@ Z value: The Z value for the input vectors. The value is used to compute the sta
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pysdg.privacy.mmbrshp.calc_mmbrshp_risk">
-<span class="sig-prename descclassname"><span class="pre">pysdg.privacy.mmbrshp.</span></span><span class="sig-name descname"><span class="pre">calc_mmbrshp_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_holdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quasiID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pysdg.privacy.mmbrshp.calc_mmbrshp_risk" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pysdg.privacy.mmbrshp.</span></span><span class="sig-name descname"><span class="pre">calc_mmbrshp_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synth_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holdout_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attack_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quasi_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hamming_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pysdg.privacy.mmbrshp.calc_mmbrshp_risk" title="Link to this definition"></a></dt>
 <dd><p>Calculates the membership disclosure risk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>synth</strong> – The synthetic dataset generated by a generative model.</p></li>
-<li><p><strong>real_train</strong> – The real dataset that  was sampled form the population and used in training a generative model.</p></li>
-<li><p><strong>real_holdout</strong> – The holdout dataset that was sampled form the population but not used in training a generative model.</p></li>
-<li><p><strong>population_size</strong> – The population size.</p></li>
-<li><p><strong>quasiID</strong> – The quasi variables of interest. All variables are used by default.</p></li>
-<li><p><strong>h</strong> – An integer representing the hamming distance threshold used in calculation.</p></li>
-<li><p><strong>no_bins</strong> – Number of bins used to discretize continuous and high cardinality discrete variables.</p></li>
+<li><p><strong>synth_data</strong> (<em>pd.DataFrame</em>) – The synthetic dataset generated by the relevant generative model.</p></li>
+<li><p><strong>training_data</strong> (<em>pd.DataFrame</em>) – The real dataset that was sampled from the population and used in training the generative model.</p></li>
+<li><p><strong>holdout_data</strong> (<em>pd.DataFrame</em>) – The holdout dataset that was sampled from the population but not used in training the generative model.</p></li>
+<li><p><strong>population_size</strong> (<em>int</em>) – The population size as an integer.</p></li>
+<li><p><strong>attack_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of records in the attack dataset. If None, it is set to the size of the training dataset.</p></li>
+<li><p><strong>quasi_vars</strong> (<em>list</em><em>, </em><em>optional</em>) – A list of variable names that are used as quasi identifiers. All variables are used by default.</p></li>
+<li><p><strong>hamming_threshold</strong> (<em>int</em>) – An integer representing the hamming distance threshold used in calculation.</p></li>
+<li><p><strong>num_bins</strong> (<em>int</em>) – Number of bins used to discretize continuous and high cardinality discrete variables.</p></li>
+<li><p><strong>num_cores</strong> (<em>int</em><em> or </em><em>None</em>) – The number of cores to be used in the calculation.
+- Positive integer: Use that many cores.
+- -1: Use all available cores.
+- None: Disable multiprocessing.</p></li>
+<li><p><strong>logger</strong> (<em>optional</em>) – A logger object to log the progress of the calculation.</p></li>
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – An integer to set the seed for reproducibility.</p></li>
+<li><p><strong>raw_info</strong> (<em>str</em><em> or </em><em>dict</em>) – <ul>
+<li><p>If a string, it should be the full path to the json file describing the real data including its extension.</p></li>
+<li><p>If a dictionary, it should be the dictionary describing the real data.</p></li>
+</ul>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Relative F1 score for membership disclosure risk.
-Naive F1 score for membership disclosure risk.</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary containing the following keys:</dt><dd><p>t: The ratio of the training dataset size to the population size.
+f1: The F1 score.
+f_naive: The naive F1 score.
+f_rel: The relative F1 score.
+precision: The precision.
+recall: The recall.
+num_members: The number of training members in the attack dataset.
+num_non_members: The number of holdout members in the attack dataset.
+tp: The number of true positives.
+fp: The number of false positives.
+fn: The number of false negatives.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="pysdg.privacy.mmbrshp.MmbrshpRsk">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pysdg.privacy.mmbrshp.</span></span><span class="sig-name descname"><span class="pre">MmbrshpRsk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">13</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_no_cores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysdg.privacy.mmbrshp.MmbrshpRsk" title="Link to this definition"></a></dt>
-<dd><p>Calculates the membership disclosure risk associated with synthetic data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>real_data</strong> (<em>dataframe</em>) – Real Dataset as Pandas dataframe.</p></li>
-<li><p><strong>population_size</strong> (<em>int</em>) – The population size of from which the real dataset was sampled.</p></li>
-<li><p><strong>h</strong> (<em>int</em>) – An integer representing the hamming distance threshold to be used when calculating the membership disclosure risk.</p></li>
-<li><p><strong>seed</strong> (<em>int</em>) – An integer for fixing the seed to ensure reproducibility. Set to None if randomness is desired.</p></li>
-<li><p><strong>max_no_cores</strong> (<em>str</em>) – Specifies the number of cores as either ‘hi’ for maximum number of cores, ‘lo’ for 5 cores or None for no multiprocessing.</p></li>
-</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="pysdg.privacy.mmbrshp.MmbrshpRsk.calc_risk">
-<span class="sig-name descname"><span class="pre">calc_risk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">syn_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pysdg.privacy.mmbrshp.MmbrshpRsk.calc_risk" title="Link to this definition"></a></dt>
-<dd><p>Calculates the membership disclosure risk.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>syn_data</strong> – Synthetic dataset (synth).</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Relative F1 score for membership disclosure risk.
-Naive F1 score for membership disclosure risk.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py function">

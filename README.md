@@ -1,6 +1,8 @@
 **Python Synthetic Data Generator** (`pysdg`) is a robust synthetic data generator for tabular datasets incorporating different types of ML-based generation algorithms. The invaluable tool also comprises add-ons to calculate privacy risks and others.
 
-`pysdg` is designed by the `<a href="https://www.ehealthinformation.ca/" target="_blank">`Electronic Health Information Laboratory (EHIL)`</a>` at the `<a href="https://www.cheori.org/" target="_blank">`CHEO Research Institute`</a>`. The package is meant to streamline the generation of synthetic data for clinical trials and support various types of analyses. It ensures consistency and robustness when handling different clinical trial datasets and generative models. The package acts as a wrapper for several reliable generative modeling implementations and includes two modules: `synth` and `privacy`.
+`pysdg` is designed by the [Electronic Health Information Laboratory (EHIL)](https://www.ehealthinformation.ca/) at the [CHEO Research Institute](https://www.cheori.org/). The package is meant to streamline the generation of synthetic data for clinical trials and support various types of analyses. It ensures consistency and robustness when handling different clinical trial datasets and generative models. The package acts as a wrapper for several reliable generative modeling implementations and includes two modules: `synth` and `privacy`.
+
+The image for `pysdg` can be downloaded from [CHEO-EHIL Packages](https://github.com/orgs/CHEO-EHIL/packages).
 
 For any questions, please submit an issue in this repository.
 

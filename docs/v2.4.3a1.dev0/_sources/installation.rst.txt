@@ -15,6 +15,21 @@ Python
     conda activate <your_virtual_environment_name>
     pip install pip==24.0
 
+.. tip::
+
+    If you are using RUNAI, it is advisable to create your Conda environment outside the pod, such as in your personal folder. This avoids the need to recreate the environment each time the pod is terminated. You can do this by specifying the --prefix option when creating the environment. For example, in any terminal, run:
+
+    `conda create --prefix /share/personal/your_username/your_env_dir/your_env_name python=3.10.14`
+
+    Afterward, when starting a new pod, you can direct Conda to look for environments in that folder by running:
+
+    `conda config --add envs_dirs /share/personal/username/your_env_dir`
+
+    Finally, activate the environment using:
+    
+    `conda activate your_env_name`
+
+
 2. Sign on to your OSF account.
 
 3. Download `pysdg` wheel file from `pysdg wheel file <https://osf.io/fdp9k>`_.

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; pysdg 2.3.0 documentation</title>
+  <title>Changelog &mdash; pysdg 2.4.3a1.dev0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c3c8ae58"></script>
+      <script src="_static/documentation_options.js?v=07e4fbb1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -146,6 +146,21 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id31">[2.3.0] - 2024-12-02</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id32">Added</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-2025-01-28-unreleased">[2.4.0a] - 2025-01-28 (Unreleased)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34">Changed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2025-01-30-unreleased">[2.4.0b] - 2025-01-30 (Unreleased)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id36">Fixed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2025-02-05">[2.4.2b] - 2025-02-05</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id37">Fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">Added</a></li>
 </ul>
 </li>
 </ul>
@@ -449,6 +464,56 @@
 <h3>Added<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Added the <code class="docutils literal notranslate"><span class="pre">restore_col_names</span></code> method to the <code class="docutils literal notranslate"><span class="pre">Generator</span></code> class, allowing users to retrieve the encoded dataframe with the original column names.</p></li>
+</ul>
+</section>
+</section>
+<section id="a-2025-01-28-unreleased">
+<h2>[2.4.0a] - 2025-01-28 (Unreleased)<a class="headerlink" href="#a-2025-01-28-unreleased" title="Link to this heading"></a></h2>
+<section id="id33">
+<h3>Added<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added Yandex diffusion model <code class="docutils literal notranslate"><span class="pre">yandex_tabddpm</span></code>.</p></li>
+<li><p>Added possibility to save selected models, pickle artifacts and retrieve them.</p></li>
+<li><p>Added Python and R tutorials for calculating membership disclosure.</p></li>
+<li><p>Added dummy generator.</p></li>
+<li><p>Added capapbility to log to a file for testing.</p></li>
+<li><p>Added tutorial for Hmedian Hellinger distance.</p></li>
+</ul>
+</section>
+<section id="id34">
+<h3>Changed<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Changed workspace naming by including the  Prrocess ID.</p></li>
+</ul>
+</section>
+<section id="id35">
+<h3>Fixed<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Cleared log handlers before starting pysdg.</p></li>
+</ul>
+</section>
+</section>
+<section id="b-2025-01-30-unreleased">
+<h2>[2.4.0b] - 2025-01-30 (Unreleased)<a class="headerlink" href="#b-2025-01-30-unreleased" title="Link to this heading"></a></h2>
+<section id="id36">
+<h3>Fixed<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Corrected the membership disclosure algorithm.</p></li>
+</ul>
+</section>
+</section>
+<section id="b-2025-02-05">
+<h2>[2.4.2b] - 2025-02-05<a class="headerlink" href="#b-2025-02-05" title="Link to this heading"></a></h2>
+<section id="id37">
+<h3>Fixed<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Ensured SDV library is installed.</p></li>
+</ul>
+</section>
+<section id="id38">
+<h3>Added<a class="headerlink" href="#id38" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Added the option to pass data info json/dict to membership disclosure function</p></li>
 </ul>
 </section>
 </section>
