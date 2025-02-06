@@ -4,6 +4,8 @@
 
 The image for `pysdg` can be downloaded from [CHEO-EHIL Packages](https://github.com/orgs/CHEO-EHIL/packages).
 
+The full documentation can be found at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/).
+
 For any questions, please submit an issue in this repository.
 
 <p align="center">
