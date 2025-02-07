@@ -1,0 +1,21 @@
+.. _api_ref:
+
+API reference
+=============
+
+.. autoclass:: pysdg.synth.generate.Generator
+
+.. autoclass:: pysdg.synth.optimize.BayesianOptimizationRoutine
+
+.. autofunction:: pysdg.synth.load.do_sweep_replica
+
+.. autofunction:: pysdg.synth.load.clear_vars 
+
+.. autofunction:: pysdg.synth.metrics.combine_estimates
+
+.. autofunction:: pysdg.synth.metrics.compare_estimates
+
+.. autofunction:: pysdg.privacy.mmbrshp.calc_mmbrshp_risk
+
+.. autofunction:: pysdg.privacy.attr.get_replica_risk
+
