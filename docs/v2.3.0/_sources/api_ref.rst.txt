@@ -17,7 +17,5 @@ API reference
 
 .. autofunction:: pysdg.privacy.mmbrshp.calc_mmbrshp_risk
 
-.. autoclass:: pysdg.privacy.mmbrshp.MmbrshpRsk
-
 .. autofunction:: pysdg.privacy.attr.get_replica_risk
 
