@@ -35,5 +35,8 @@
     "h0_value": [
         0
     ],
-    "quasi_idxs": []
+    "population_size": [
+        968435
+    ],
+    "quasi_idxs": [4,8]
 }
