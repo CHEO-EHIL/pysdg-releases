@@ -17,6 +17,8 @@ docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-p
 ```
 After executing these commands, follow the provided link to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped /your/local/directory to start exploring `pysdg`.
 
+Please note that the tutorial files are produced using the latest version (even if it beta version).
+
 For any questions, please submit an issue in this repository.
 
 <p align="center">
