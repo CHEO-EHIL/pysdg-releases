@@ -1,0 +1,45 @@
+
+# Tutorial: Basic usage
+
+**This tutorial demonstrates the core functions of pysdg.** It assumes that pysdg is already installed in a Conda environment. For detailed installation instructions, please consult the pysdg documentation. 
+
+The core functions include: loading, training, generating and unloading. 
+
+```{r}
+# Import the Generator class.
+synth.generate <- reticulate::import("pysdg.synth.generate") 
+```
+
+```{r}
+# Define your paths to the raw data and raw info files.
+raw_data_path <- "raw_data.csv" 
+raw_info_path <- "raw_info.json" 
+```
+
+```{r}
+# Create a Generator object with your generator of interest.
+gen <- synth.generate$Generator("synthcity_bayesian_network")
+```
+
+
+```{r}
+# Load the raw dataset and raw info file into the generator. The returned real dataset will have all data types correctly converted according to the specifications in the raw info file.
+real <- gen$load( raw_data_path, raw_info_path) 
+head(real,10)
+```
+
+```{r}
+# Train the generator on the real dataset.
+gen$train() 
+```
+
+```{r}
+# Generate the desired number of synthetic datasets (num_synths), each containing the specified number of rows (num_rows).
+gen$gen(num_rows=nrow(real), num_synths=2) 
+```
+
+```{r}
+# unload the synthetic datasets
+synths<-gen$unload()
+head(synths[[1]],10)
+```
