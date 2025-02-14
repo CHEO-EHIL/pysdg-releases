@@ -1,26 +1,36 @@
-**Python Synthetic Data Generator** (`pysdg`) is a robust synthetic data generator for tabular datasets incorporating different types of ML-based generation algorithms. The invaluable tool also comprises add-ons to calculate privacy risks and others.
+**Python Synthetic Data Generator** (`pysdg`) is a powerful tool for generating synthetic tabular datasets using various machine learning algorithms. It also includes additional features for assessing privacy risks and more.
 
-`pysdg` is designed by the [Electronic Health Information Laboratory (EHIL)](https://www.ehealthinformation.ca/) at the [CHEO Research Institute](https://www.cheori.org/). The package is meant to streamline the generation of synthetic data for clinical trials and support various types of analyses. It ensures consistency and robustness when handling different clinical trial datasets and generative models. The package acts as a wrapper for several reliable generative modeling implementations and includes two modules: `synth` and `privacy`.
+The `pysdg` package is developed by the [Electronic Health Information Laboratory (EHIL)](https://www.ehealthinformation.ca/) at the [CHEO Research Institute](https://www.cheori.org/). It is designed to facilitate the generation of synthetic data for clinical trials, enabling various types of analyses. The package ensures consistency and robustness in handling different clinical trial datasets and generative models. Acting as a wrapper for several reliable generative modeling implementations, `pysdg` includes two main modules: `synth` and `privacy`.
 
-### Documentation  
-The full documentation can be found at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/).
+### Documentation
+
+Comprehensive documentation for the latest version of `pysdg` is available at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/latest/index.html). For documentation related to specific versions, please visit [pysdg releases](https://cheo-ehil.github.io/pysdg-releases/).
 
 ### Installation
 
-You have the option to install the package by using the appropriate release wheel file available in this repository, following the installation instructions provided in the relevant release documentation linked above. Alternatively, you can download the corresponding image from [CHEO-EHIL Packages](https://github.com/orgs/CHEO-EHIL/packages).
-
-For instance, to install and utilize the most recent Docker image, ensure that Docker is set up on your machine. Then, execute the following commands in your terminal:
+You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.3.0, run:
 
 ```bash
-docker pull ghcr.io/cheo-ehil/technical-resources-and-docs/ehil-py-pysdg:latest
-docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/technical-resources-and-docs/ehil-py-pysdg:latest
+pip install pysdg-2.3.0-py3-none-any.whl
 ```
+
+Alternatively, you can download the relevant Docker image from [CHEO-EHIL Packages](https://github.com/orgs/CHEO-EHIL/packages).
+
+To install and use the test Docker image, ensure Docker is installed on your machine. For example, to use the latest version of the `pysdg` library in a Jupyter notebook, follow these steps:
+
+```bash
+docker pull ghcr.io/cheo-ehil/pysdg/ehil-py-pysdg:latest
+docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/ehil-py-pysdg:latest
+```
+
 After executing these commands, follow the provided link to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped /your/local/directory to start exploring `pysdg`.
 
-Please be aware that the tutorial files are created using the latest version, including beta versions.
+Please be aware that the tutorial files are created using the latest version.
 
-For any questions, please submit an issue in this repository.
+You can also find an RStudio-based image in the same link to the packages.
+
+For any inquiries or support, please open an issue in this repository.
 
 <p align="center">
-  <img alt="EHIL-CHEO Logos" src="docs/images/ehil_cheo.png" width="600" style="margin-right: 40px;">
+  <img alt="EHIL-CHEO Logos" src="images/ehil_cheo.png" width="600" style="margin-right: 40px;">
 </p>
