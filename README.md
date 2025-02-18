@@ -32,5 +32,5 @@ You can also find an RStudio-based image in the same link to the packages.
 For any inquiries or support, please open an issue in this repository.
 
 <p align="center">
-  <img alt="EHIL-CHEO Logos" src="images/ehil_cheo.png" width="600" style="margin-right: 40px;">
+  <img alt="EHIL-CHEO Logos" src="../images/ehil_cheo.png" width="600" style="margin-right: 40px;">
 </p>
