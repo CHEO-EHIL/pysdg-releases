@@ -3,9 +3,13 @@
 Installation
 ============
 
-To install `pysdg`, you need to have access to `pysdg` project files at `OSF <https://osf.io/>`_. Please contact Khaled El Emam if you need access. 
+The `pysdg` library can be used in both `python` or `R`. The package can be installed either using `wheel` file or Docker images.
 
-The `pysdg` library can be used in `python` or `R`. The package is provided as a `wheel` file. Below are the details to install the library for each language.
+The Docker images for Python are available at `pysdg Python images <https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-py-pysdg>`_.  while these for R are available at `pysdg R images <https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-r-pysdg-sdgm>`_. The images are tagged with the version of the package.
+
+Follow the steps provided in the `readme file <https://github.com/CHEO-EHIL/pysdg-releases>`_ to install the package using the Docker images.
+
+Below are the details to install the library using the wheel files.
 
 Python
 ******
@@ -30,19 +34,17 @@ Python
     `conda activate your_env_name`
 
 
-2. Sign on to your OSF account.
+2. Download the required release of `pysdg` wheel file from `pysdg wheel file releases <https://github.com/CHEO-EHIL/pysdg-releases/tree/main/releases>`_.
 
-3. Download `pysdg` wheel file from `pysdg wheel file <https://osf.io/fdp9k>`_.
+3. If needed, and if you have the necessary credentials, download the wheel file provided to you by `Replica/Aetion <https://aetion.com/>`_. You do not need to download this file if you are not using the Replica generator.
 
-4. If needed, and if you have the necessary credentials, download Replica wheel file from `Replica wheel file <https://osf.io/7kaxb>`_.
-
-5. Install `pysdg` and Replica (if needed) using:: 
+4. Install `pysdg` and Replica (if needed) using:: 
 
     pip install <the_downloaded_pysdg_wheel_file>
     pip install <the_downloaded_replica_wheel_file>
 
 
-6. If you intend to use the package in Jupyter Notebook, you need to add the above environment as a Jupyter kernel by issuing the following additional commands from your terminal:: 
+5. If you intend to use the package in Jupyter Notebook, you need to add the above environment as a Jupyter kernel by issuing the following additional commands from your terminal:: 
     
     conda install -c anaconda ipykernel
     python -m ipykernel install --user --name=<your_virtual_environment_name>
@@ -82,13 +84,13 @@ From your R `console`, execute teh following steps:
     reticulate::use_condaenv("<your_virtual_environment_name>")
     reticulate::conda_install("<your_virtual_environment_name>", packages = "pip==24.0", pip = FALSE) 
 
-4. Sign on to your OSF account and Download the wheel files for both `pysdg` and Replica as mentioned above in 2,3 and 4 under Python installation.
+4. Follow steps 2 and 3 under Python installation above.
 
 5. Install pysdg within the conda environment:: 
 
     reticulate::conda_install("<your_virtual_environment_name>", "path_to_the_downloaded_pysdg_wheel_file", pip = TRUE, conda = "auto", python_version = "3.10")
 
-6. Use the same environment above to install Replica using::
+6. Use the same environment above to install Replica (if needed) using::
 
     reticulate::conda_install("<your_virtual_environment_name>", "path_to_the_downloaded_replica_wheel_file", pip = TRUE, conda = "auto", python_version = "3.10")
 

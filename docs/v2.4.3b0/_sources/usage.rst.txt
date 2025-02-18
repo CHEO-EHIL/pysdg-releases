@@ -67,6 +67,7 @@ Supported generators
 5. `"synthcity_rtvae" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_rtvae.html>`_
 6. `"synthcity_arf" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_goggle.html>`_
 7. `"synthcity_nflow" <https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_nflow.html>`_
+8. `"yandex_tabddpm" <https://github.com/yandex-research/tab-ddpm>`_
 
 
 

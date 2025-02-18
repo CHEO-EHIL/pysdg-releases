@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Installation &mdash; pysdg 2.4.3a1.dev0 documentation</title>
+  <title>2. Installation &mdash; pysdg 2.4.3b0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=07e4fbb1"></script>
+      <script src="_static/documentation_options.js?v=4c3a72c6"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -88,8 +88,10 @@
              
   <section id="installation">
 <span id="id1"></span><h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>To install <cite>pysdg</cite>, you need to have access to <cite>pysdg</cite> project files at <a class="reference external" href="https://osf.io/">OSF</a>. Please contact Khaled El Emam if you need access.</p>
-<p>The <cite>pysdg</cite> library can be used in <cite>python</cite> or <cite>R</cite>. The package is provided as a <cite>wheel</cite> file. Below are the details to install the library for each language.</p>
+<p>The <cite>pysdg</cite> library can be used in both <cite>python</cite> or <cite>R</cite>. The package can be installed either using <cite>wheel</cite> file or Docker images.</p>
+<p>The Docker images for Python are available at <a class="reference external" href="https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-py-pysdg">pysdg Python images</a>.  while these for R are available at <a class="reference external" href="https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-r-pysdg-sdgm">pysdg R images</a>. The images are tagged with the version of the package.</p>
+<p>Follow the steps provided in the <a class="reference external" href="https://github.com/CHEO-EHIL/pysdg-releases">readme file</a> to install the package using the Docker images.</p>
+<p>Below are the details to install the library using the wheel files.</p>
 <section id="python">
 <h2><span class="section-number">2.1. </span>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
 <ol class="arabic">
@@ -111,9 +113,8 @@
 <p><cite>conda activate your_env_name</cite></p>
 </div>
 <ol class="arabic" start="2">
-<li><p>Sign on to your OSF account.</p></li>
-<li><p>Download <cite>pysdg</cite> wheel file from <a class="reference external" href="https://osf.io/fdp9k">pysdg wheel file</a>.</p></li>
-<li><p>If needed, and if you have the necessary credentials, download Replica wheel file from <a class="reference external" href="https://osf.io/7kaxb">Replica wheel file</a>.</p></li>
+<li><p>Download the required release of <cite>pysdg</cite> wheel file from <a class="reference external" href="https://github.com/CHEO-EHIL/pysdg-releases/tree/main/releases">pysdg wheel file releases</a>.</p></li>
+<li><p>If needed, and if you have the necessary credentials, download the wheel file provided to you by <a class="reference external" href="https://aetion.com/">Replica/Aetion</a>. You do not need to download this file if you are not using the Replica generator.</p></li>
 <li><p>Install <cite>pysdg</cite> and Replica (if needed) using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">the_downloaded_pysdg_wheel_file</span><span class="o">&gt;</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">the_downloaded_replica_wheel_file</span><span class="o">&gt;</span>
@@ -161,13 +162,13 @@
 </pre></div>
 </div>
 </li>
-<li><p>Sign on to your OSF account and Download the wheel files for both <cite>pysdg</cite> and Replica as mentioned above in 2,3 and 4 under Python installation.</p></li>
+<li><p>Follow steps 2 and 3 under Python installation above.</p></li>
 <li><p>Install pysdg within the conda environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reticulate</span><span class="p">::</span><span class="n">conda_install</span><span class="p">(</span><span class="s2">&quot;&lt;your_virtual_environment_name&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;path_to_the_downloaded_pysdg_wheel_file&quot;</span><span class="p">,</span> <span class="n">pip</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">conda</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">python_version</span> <span class="o">=</span> <span class="s2">&quot;3.10&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p>Use the same environment above to install Replica using:</p>
+<li><p>Use the same environment above to install Replica (if needed) using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reticulate</span><span class="p">::</span><span class="n">conda_install</span><span class="p">(</span><span class="s2">&quot;&lt;your_virtual_environment_name&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;path_to_the_downloaded_replica_wheel_file&quot;</span><span class="p">,</span> <span class="n">pip</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">conda</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">python_version</span> <span class="o">=</span> <span class="s2">&quot;3.10&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
