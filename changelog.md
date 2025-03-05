@@ -18,7 +18,7 @@ This file documents the notable changes to this project. Only selected versions 
 
 ## [2.4.0b] - 2025-01-30
 
-- **Fixed:** Corrected membership disclosure algorithm.
+- **Fixed:** Corrected membership disclosure algorithm. **Note: The previous implementation resulted in inflated membership disclosure numbers, which means that if the disclosure value was low then the true value was definitely low.**
 
 ## [2.4.0a] - 2025-01-28
 
