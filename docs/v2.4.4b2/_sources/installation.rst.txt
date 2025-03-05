@@ -1,0 +1,98 @@
+.. _installation:
+
+Installation
+============
+
+The `pysdg` library can be used in both `python` or `R`. The package can be installed either using `wheel` file or Docker images.
+
+The Docker images for Python are available at `pysdg Python images <https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-py-pysdg>`_.  while these for R are available at `pysdg R images <https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-r-pysdg-sdgm>`_. The images are tagged with the version of the package.
+
+Follow the steps provided in the `readme file <https://github.com/CHEO-EHIL/pysdg-releases>`_ to install the package using the Docker images.
+
+Below are the details to install the library using the wheel files.
+
+Python
+******
+1. From your terminal, create your virtual environment using `conda` and make sure to specify the python version as `3.10.14` and the pip version as `24.0`, e.g. :: 
+
+    conda create -n  <your_virtual_environment_name> python=3.10.14
+    conda activate <your_virtual_environment_name>
+    pip install pip==24.0
+
+.. tip::
+
+    If you are using RUNAI, it is advisable to create your Conda environment outside the pod, such as in your personal folder. This avoids the need to recreate the environment each time the pod is terminated. You can do this by specifying the --prefix option when creating the environment. For example, in any terminal, run:
+
+    `conda create --prefix /share/personal/your_username/your_env_dir/your_env_name python=3.10.14`
+
+    Afterward, when starting a new pod, you can direct Conda to look for environments in that folder by running:
+
+    `conda config --add envs_dirs /share/personal/username/your_env_dir`
+
+    Finally, activate the environment using:
+    
+    `conda activate your_env_name`
+
+
+2. Download the required release of `pysdg` wheel file from `pysdg wheel file releases <https://github.com/CHEO-EHIL/pysdg-releases/tree/main/releases>`_.
+
+3. If needed, and if you have the necessary credentials, download the wheel file provided to you by `Replica/Aetion <https://aetion.com/>`_. You do not need to download this file if you are not using the Replica generator.
+
+4. Install `pysdg` and Replica (if needed) using:: 
+
+    pip install <the_downloaded_pysdg_wheel_file>
+    pip install <the_downloaded_replica_wheel_file>
+
+
+5. If you intend to use the package in Jupyter Notebook, you need to add the above environment as a Jupyter kernel by issuing the following additional commands from your terminal:: 
+    
+    conda install -c anaconda ipykernel
+    python -m ipykernel install --user --name=<your_virtual_environment_name>
+
+Then from your Jupyter notebook, select the new kernel that was created based on your environment.
+
+
+R
+***
+
+From your R `console`, execute teh following steps:
+
+1. Install the package reticulate and the python version 3.10.14 through R. (Note: Installing python using reticulate may take a long time):
+
+    .. code-block:: r
+
+        devtools::install_version("reticulate", version = "1.38.0")
+        reticulate::install_python(version="3.10.14")
+
+    .. tip::
+
+        Typically, if you are using `Rstudio` template when creating a `runai` job, installing `Python` should execute smoothly. However, in case you encounter any errors, then, from your RStudio `terminal`, try updating Linux using:
+
+    .. code-block:: console
+
+            sudo apt-get update
+            sudo apt-get install -y build-essential libssl-dev zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev liblzma-dev
+        
+
+2. Install miniconda to create a conda environment::
+
+    reticulate::install_miniconda()
+    reticulate::conda_create("<your_virtual_environment_name>", python_version = "3.10.14")
+
+3. Make sure you use the correct version of pip::
+
+    reticulate::use_condaenv("<your_virtual_environment_name>")
+    reticulate::conda_install("<your_virtual_environment_name>", packages = "pip==24.0", pip = FALSE) 
+
+4. Follow steps 2 and 3 under Python installation above.
+
+5. Install pysdg within the conda environment:: 
+
+    reticulate::conda_install("<your_virtual_environment_name>", "path_to_the_downloaded_pysdg_wheel_file", pip = TRUE, conda = "auto", python_version = "3.10")
+
+6. Use the same environment above to install Replica (if needed) using::
+
+    reticulate::conda_install("<your_virtual_environment_name>", "path_to_the_downloaded_replica_wheel_file", pip = TRUE, conda = "auto", python_version = "3.10")
+
+
+
