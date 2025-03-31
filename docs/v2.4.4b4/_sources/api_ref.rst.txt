@@ -1,0 +1,30 @@
+.. _api_ref:
+
+API reference
+=============
+
+Synthesis Functions
+-------------------
+.. autoclass:: pysdg.synth.generate.Generator
+
+.. autoclass:: pysdg.synth.optimize.BayesianOptimizationRoutine
+
+.. autofunction:: pysdg.synth.load.do_sweep_replica
+
+Metric Functions
+-----------------
+
+.. autofunction:: pysdg.synth.metrics.calc_univar_hellinger_distance
+
+.. autofunction:: pysdg.synth.metrics.calc_multivar_hellinger_distance
+
+.. autofunction:: pysdg.synth.metrics.combine_estimates
+
+.. autofunction:: pysdg.synth.metrics.compare_estimates
+
+Privacy Functions
+-----------------
+
+.. autofunction:: pysdg.privacy.mmbrshp.calc_membership_risk
+
+.. autofunction:: pysdg.privacy.attr.calc_attribution_risk
