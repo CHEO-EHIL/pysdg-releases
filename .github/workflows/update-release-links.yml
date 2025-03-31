@@ -37,10 +37,10 @@ jobs:
         
                   # Replace the $SELECTION_PLACEHOLDER$ in index.html
                   if [ -f docs/index.html ]; then
-                      sed -i '/\$SELECTION_PLACEHOLDER\$/{
-                          r /dev/stdin
-                          d
-                      }' docs/index.html <<< "$links"
+                    # Replace everything between the markers, but keep markers intact
+                    sed -i '/<!-- START_RELEASE_LINKS -->/,/<!-- END_RELEASE_LINKS -->/c\
+                    <!-- START_RELEASE_LINKS -->\
+                    '"$links"'<!-- END_RELEASE_LINKS -->' docs/index.html
                   else
                       echo "Error: docs/index.html does not exist."
                       exit 1
