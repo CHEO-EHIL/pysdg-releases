@@ -31,8 +31,9 @@ jobs:
                   # Generate the new list of release links
                   links=""
                   for release in $releases; do
-                      links="$links<li><a href=\"$release/index.html\">Release ${release#v}</a></li>\n"
+                      links+=$(printf '<li><a href="%s/index.html">Release %s</a></li>\n' "$release" "${release#v}")
                   done
+
         
                   # Replace the $SELECTION_PLACEHOLDER$ in index.html
                   if [ -f docs/index.html ]; then
