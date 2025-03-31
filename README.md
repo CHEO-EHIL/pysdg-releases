@@ -6,6 +6,10 @@ The `pysdg` package is developed by the [Electronic Health Information Laborator
 
 Comprehensive documentation for the latest version of `pysdg` is available at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/latest/index.html). For documentation related to specific versions, please visit [pysdg releases](https://cheo-ehil.github.io/pysdg-releases/).
 
+### Note on Release Versions
+
+The latest release of `pysdg` is a stable version and does not include a "b" in its release number, indicating it is not a beta release.
+
 ### Installation
 
 You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.3.0, run:
@@ -14,7 +18,7 @@ You can install the package by using the appropriate release wheel file availabl
 pip install pysdg-2.3.0-py3-none-any.whl
 ```
 
-Alternatively, you can download the relevant Docker image from [CHEO-EHIL Packages](https://github.com/orgs/CHEO-EHIL/packages).
+Alternatively, you can download the relevant Docker image from [pysdg in Jupyter](https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-py-pysdg) for `Python` users and from [pysdg in RStudio](https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-r-pysdg-sdgm) for `R` users.
 
 To install and use the test Docker image, ensure Docker is installed on your machine. For example, to use the latest version of the `pysdg` library in a Jupyter notebook, follow these steps:
 
