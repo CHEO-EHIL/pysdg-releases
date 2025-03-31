@@ -35,7 +35,7 @@ jobs:
                   sed -i '/$SELECTION_PLACEHOLDER$/{
                       r /dev/stdin
                       d
-                  }' /home/jovyan/personal/projects/pysdg-releases/docs/index.html <<< "$links"
+                  }' /home/jovyan/personal/skababji/projects/pysdg-releases/docs/index.html <<< "$links"
         
               - name: Commit and push changes
                 run: |
