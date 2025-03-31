@@ -1,0 +1,42 @@
+{
+    "ds_name": [
+        "tutorial_data"
+    ],
+    "nct_nos": [],
+    "id_idx": [],
+    "cat_idxs": [
+        0,
+        3,
+        5,
+        6,
+        7,
+        8
+    ],
+    "cnt_idxs": [
+        2
+    ],
+    "dscrt_idxs": [
+        4
+    ],
+    "datetime_idxs": [
+        1
+    ],
+    "text_idxs": [],
+    "miss_vals": [
+        "nan",
+        "NAN",
+        "<NA>",
+        "NaT",
+        "NaN",
+        "NA",
+        "None",
+        ""
+    ],
+    "h0_value": [
+        0
+    ],
+    "population_size": [
+        968435
+    ],
+    "quasi_idxs": [4,8]
+}
