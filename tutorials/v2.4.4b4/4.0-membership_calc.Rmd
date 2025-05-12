@@ -1,0 +1,71 @@
+---
+title: "pysdg in R"
+output: html_document
+---
+
+# Tutorial: Membership Disclosure Vulnerability
+
+**This tutorial demonstrates the calculation of membership disclosure vulnerability via pysdg.** It assumes that pysdg is already installed in a conda environment. The package reticulate is used to interface with Python. For respective installation instructions, please consult the pysdg documentation. 
+
+**Membership disclosure** is concerned about an adversary inferring the membership of a target in a training dataset used for synthetic data generation. When measuring the membership disclosure vulnerability of a synthetic dataset, we mimic an adversary who attacks the synthetic data. An adversary in such an attack has targets who were indeed part of the training dataset (i.e., members) as well as those who were not (i.e., non-members).
+
+## Step 1: Activate the Conda Environment
+For the purpose of this tutorial, we assume that your conda environment was named `pysd_dev`, so the first step is to activate it. Note that Step 1 is *not* required if you are working with a pre-defined Docker image that has the required environment including its dependencies pre-installed.
+
+```{r}
+library(reticulate) 
+use_condaenv("pysdg_dev", required = TRUE) 
+```
+
+## Step 2: Import Core and Membership Disclosure Vulnerability Functions
+Relevant functions are imported from pysdg:
+
+* synth.load for standardized loading of datasets via pysdg,  
+* synth.generate to generate a synthetic dataset and  
+* privacy.mmbrshp for the calculation of membership disclosure vulnerability.  
+
+```{r}
+synth.generate <- reticulate::import("pysdg.synth.generate") 
+synth.load <- reticulate::import("pysdg.synth.load")
+privacy.mmbrshp <- reticulate::import("pysdg.privacy.mmbrshp")
+```
+
+## Step 3: Load the Training and Holdout Data
+Loading data via the pysdg loading function requires setting a "dummy" generator. This can be any arbitrary generator, as the loading process is independent of the generator. We load the following datasets:
+
+* training data for synthetic data generation: all records in the training data are members
+* holdout data: all records in the holdout data are non-members
+
+```{r}
+train_data_path <- "raw_train.csv"
+raw_info_path <- "raw_info.json"
+holdout_data_path <- "raw_holdout.csv"
+gen <- synth.generate$Generator("synthcity_bayesian_network")
+holdout_data <- gen$load(holdout_data_path, raw_info_path)
+train_data <- gen$load(train_data_path, raw_info_path)
+```
+
+## Step 4: Generate a Synthetic Dataset
+The detailed steps to generate synthetic datasets are described in tutorial 2.0 - basics. In the current tutorial, we generate a synthetic dataset using the generator as specified in Step 3. Note that you can also directly load a synthetic dataset from your directory.
+
+```{r}
+gen$train()
+gen$gen(num_rows = nrow(train_data), num_synths = 1)
+synths <- gen$unload()
+synth_data <- synths[[1]]
+```
+
+## Step 5: Calculate Membership Disclosure Vulnerability 
+The calculation of membership disclosure vulnerability via pysdg outputs three values:
+
+* F1 score: the absolute F1 score when using the synthetic data, without adjusting for disclosure independent inference
+* naive F1 score: the absolute F1 score from a naive guess, without leveraging the synthetic data (i.e., disclosure independent inference)
+* relative F1 score: the vulnerability estimate for the synthetic dataset, adjusted for the naive F1 score 
+
+The population size refers to the size of the population the training data was sampled from. We assumed a sampling fraction of 10%. The attack size refers to the size of the attack dataset. We assumed an adversary with an attack dataset of 20% the size of the training data. These numbers are arbitrarily chosen for this tutorial.
+
+The hamming threshold is the tolerance an adversary may have to consider a synthetic record as a match for their target. A threshold of 0 implies exact matching.
+```{r}
+mmbrshp <- privacy.mmbrshp$calc_membership_risk(synth_data, train_data, holdout_data, population_size = 10*nrow(train_data), attack_size = as.integer(0.2 * nrow(train_data)), hamming_threshold = 3, seed = as.integer(15))
+print(paste0("The membership disclosure vulnerability is ", mmbrshp$f_rel))
+```

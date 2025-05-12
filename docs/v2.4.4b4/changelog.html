@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog &mdash; pysdg 2.4.4b4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3e1099af"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="5. API reference" href="api_ref.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pysdg
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">1. About <cite>pysdg</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">3. Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generators.html">4. Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_ref.html">5. API reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#b4-2025-03-27">[2.4.4b4] - 2025-03-27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b3-2025-03-06">[2.4.4b3] - 2025-03-06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b2-2025-02-07-released-beta">[2.4.4b2] - 2025-02-07 (<strong>RELEASED - BETA</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b0-2025-02-07-released-beta">[2.4.3b0] - 2025-02-07 (<strong>RELEASED - BETA</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2025-02-05">[2.4.2b] - 2025-02-05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2025-01-30">[2.4.0b] - 2025-01-30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-2025-01-28">[2.4.0a] - 2025-01-28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#released-stable">[2.3.0] - 2024-12-02 (<strong>RELEASED - STABLE</strong>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rc0-2024-11-23">[2.3.0rc0] - 2024-11-23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-09-26">[2.2.0b] - 2024-09-26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rc0-2024-09-06">[2.1.6rc0] - 2024-09-06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-30">[2.1.6b] - 2024-08-30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-20">[2.1.5b] - 2024-08-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">[2.1.4b] - 2024-08-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-16">[2.1.3b] - 2024-08-16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">[2.1.2b] - 2024-08-16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-09">[2.1.1b] - 2024-08-09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-08">[2.1.0b] - 2024-08-08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-06">[2.0.8b] - 2024-08-06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-08-02">[2.0.7b] - 2024-08-02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-07-31">[2.0.6b] - 2024-07-31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-07-30">[2.0.5b] - 2024-07-30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-07-29">[2.0.4b] - 2024-07-29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">[2.0.3b] - 2024-07-29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-07-26">[2.0.2b] - 2024-07-26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b-2024-07-24">[2.0.1b] - 2024-07-24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">[2.0.0b] - 2024-07-24</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pysdg</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Changelog</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/changelog.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
+<p>This file documents the notable changes to this project. Only selected versions are released.</p>
+<section id="b4-2025-03-27">
+<h2>[2.4.4b4] - 2025-03-27<a class="headerlink" href="#b4-2025-03-27" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Error thrown by <code class="docutils literal notranslate"><span class="pre">calc_univar_hellinger_distance</span></code> when encoded columns of real and synth data do not match.</p></li>
+<li><p><strong>Fixed:</strong> Median calculation in <code class="docutils literal notranslate"><span class="pre">calc_univar_hellinger_distance</span></code> when NA is encountered.</p></li>
+<li><p><strong>Fixed:</strong> Multivariate Hellinger distance datatime handling.</p></li>
+<li><p><strong>Added:</strong> Inference risk privacy metric.</p></li>
+<li><p><strong>Added:</strong> Vulnerability-utility metric.</p></li>
+</ul>
+</section>
+<section id="b3-2025-03-06">
+<h2>[2.4.4b3] - 2025-03-06<a class="headerlink" href="#b3-2025-03-06" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> Default option to infer datatypes in addition to explicitly passing the JSON file for the input dataset in the <code class="docutils literal notranslate"><span class="pre">Generator</span></code> class.</p></li>
+<li><p><strong>Added:</strong> Function to calculate multivariate Hellinger distance <code class="docutils literal notranslate"><span class="pre">calc_multivar_hellinger_distance</span></code>.</p></li>
+<li><p><strong>Deprecated:</strong> Renamed the function <code class="docutils literal notranslate"><span class="pre">calc_mmbrshp_risk</span></code> to <code class="docutils literal notranslate"><span class="pre">calc_membership_risk</span></code>.</p></li>
+<li><p><strong>Deprecated:</strong> Renamed the function <code class="docutils literal notranslate"><span class="pre">calc_univariate_hlngr_distance</span></code> to <code class="docutils literal notranslate"><span class="pre">calc_univar_hellinger_distance</span></code>.</p></li>
+<li><p><strong>Fixed:</strong> Issue with “Failed to remove ‘None’” in the <code class="docutils literal notranslate"><span class="pre">unload</span></code> method.</p></li>
+<li><p><strong>Added:</strong> Support for specifying generator names in the format <code class="docutils literal notranslate"><span class="pre">source/generator</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">synthcity/ctgan</span></code>). The old format remains functional.</p></li>
+<li><p><strong>Added:</strong> Introduced the <code class="docutils literal notranslate"><span class="pre">gen_params</span></code> attribute in <code class="docutils literal notranslate"><span class="pre">Generator</span></code> to allow users to define generator hyperparameters in the format used by the generator’s source, replacing the <code class="docutils literal notranslate"><span class="pre">synthcity_params</span></code> attribute, which will eventually be deprecated.</p></li>
+<li><p><strong>Changed:</strong> Redefined estimate agreement to indicate whether the synthetic data estimate falls within the confidence interval (CI) of the real data.</p></li>
+</ul>
+</section>
+<section id="b2-2025-02-07-released-beta">
+<h2>[2.4.4b2] - 2025-02-07 (<strong>RELEASED - BETA</strong>)<a class="headerlink" href="#b2-2025-02-07-released-beta" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> The calculation of directional decision agreement.</p></li>
+<li><p><strong>Deprecated:</strong> The <code class="docutils literal notranslate"><span class="pre">compare_estimates</span></code> function no longer returns an array. It now returns a dictionary instead. The array return is deprecated.</p></li>
+</ul>
+</section>
+<section id="b0-2025-02-07-released-beta">
+<h2>[2.4.3b0] - 2025-02-07 (<strong>RELEASED - BETA</strong>)<a class="headerlink" href="#b0-2025-02-07-released-beta" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Handling incorrect <code class="docutils literal notranslate"><span class="pre">quasi_vars</span></code> in the membership disclosure function.</p></li>
+</ul>
+</section>
+<section id="b-2025-02-05">
+<h2>[2.4.2b] - 2025-02-05<a class="headerlink" href="#b-2025-02-05" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> Option to pass data info as <code class="docutils literal notranslate"><span class="pre">json/dict</span></code> to membership disclosure function.</p></li>
+<li><p><strong>Fixed:</strong> Ensured SDV library is installed as a dependency for the diffusion model.</p></li>
+</ul>
+</section>
+<section id="b-2025-01-30">
+<h2>[2.4.0b] - 2025-01-30<a class="headerlink" href="#b-2025-01-30" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Corrected membership disclosure algorithm. <strong>Note: The previous implementation resulted in inflated membership disclosure numbers, which means that if the disclosure value was low then the true value was definitely low.</strong></p></li>
+</ul>
+</section>
+<section id="a-2025-01-28">
+<h2>[2.4.0a] - 2025-01-28<a class="headerlink" href="#a-2025-01-28" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong></p>
+<ul>
+<li><p>Yandex diffusion model <code class="docutils literal notranslate"><span class="pre">yandex_tabddpm</span></code>.</p></li>
+<li><p>Possibility to save selected models, pickle artifacts, and retrieve them.</p></li>
+<li><p>Python and R tutorials for calculating membership disclosure.</p></li>
+<li><p>Dummy generator.</p></li>
+<li><p>Capability to log to a file for testing.</p></li>
+<li><p>Tutorial for Median Hellinger distance.</p></li>
+</ul>
+</li>
+<li><p><strong>Changed:</strong> Changed workspace naming by including the Process ID.</p></li>
+<li><p><strong>Fixed:</strong> Cleared log handlers before starting pysdg.</p></li>
+</ul>
+</section>
+<section id="released-stable">
+<h2>[2.3.0] - 2024-12-02 (<strong>RELEASED - STABLE</strong>)<a class="headerlink" href="#released-stable" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> <code class="docutils literal notranslate"><span class="pre">restore_col_names</span></code> method in <code class="docutils literal notranslate"><span class="pre">Generator</span></code> class to retrieve the encoded dataframe with original column names.</p></li>
+</ul>
+</section>
+<section id="rc0-2024-11-23">
+<h2>[2.3.0rc0] - 2024-11-23<a class="headerlink" href="#rc0-2024-11-23" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong></p>
+<ul>
+<li><p>Bayesian optimization feature for CTGAN, along with a tutorial.</p></li>
+<li><p>Option to log output to a file.</p></li>
+<li><p>Option to specify the maximum number of cores.</p></li>
+<li><p>Detection of duplicate index entries in the json input file for the Generator.</p></li>
+</ul>
+</li>
+<li><p><strong>Fixed:</strong> Improved performance for handling erratic values in datasets.</p></li>
+<li><p><strong>Changed:</strong> Replaced <code class="docutils literal notranslate"><span class="pre">no_obsvs</span></code> with <code class="docutils literal notranslate"><span class="pre">num_rows</span></code> and <code class="docutils literal notranslate"><span class="pre">no_synths</span></code> with <code class="docutils literal notranslate"><span class="pre">num_synths</span></code> in <code class="docutils literal notranslate"><span class="pre">Generator.gen</span></code> method.</p></li>
+</ul>
+</section>
+<section id="b-2024-09-26">
+<h2>[2.2.0b] - 2024-09-26<a class="headerlink" href="#b-2024-09-26" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong></p>
+<ul>
+<li><p>Standalone function to compute membership disclosure risk.</p></li>
+<li><p>Function to remove unnecessary global variables.</p></li>
+</ul>
+</li>
+<li><p><strong>Deprecated:</strong> The class <code class="docutils literal notranslate"><span class="pre">MmbrshpRsk</span></code> may be deprecated in upcoming release.</p></li>
+<li><p><strong>Changed:</strong> Improved code readability.</p></li>
+</ul>
+</section>
+<section id="rc0-2024-09-06">
+<h2>[2.1.6rc0] - 2024-09-06<a class="headerlink" href="#rc0-2024-09-06" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> Verified availability of the Replica library.</p></li>
+</ul>
+</section>
+<section id="b-2024-08-30">
+<h2>[2.1.6b] - 2024-08-30<a class="headerlink" href="#b-2024-08-30" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> <code class="docutils literal notranslate"><span class="pre">inspect_data</span></code> function to assist json file creator in locating discrepancies.</p></li>
+<li><p><strong>Fixed:</strong> Misinterpretation of high cardinality categorical variables in Replica.</p></li>
+</ul>
+</section>
+<section id="b-2024-08-20">
+<h2>[2.1.5b] - 2024-08-20<a class="headerlink" href="#b-2024-08-20" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Mismatch in shape error in synthcity_ctgan for unbalanced categorical variables.</p></li>
+<li><p>Removed ‘synthcity_goggle’ generator.</p></li>
+</ul>
+</li>
+<li><p><strong>Changed:</strong> Replaced “soul” by “real” and “ghost” by “synth” in all Generator attributes.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>[2.1.4b] - 2024-08-20<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Error loading the .env file for Replica generator.</p></li>
+</ul>
+</section>
+<section id="b-2024-08-16">
+<h2>[2.1.3b] - 2024-08-16<a class="headerlink" href="#b-2024-08-16" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Error that forced all logical columns to equate to True.</p></li>
+<li><p>Incorrect identification of missing values as erratic.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>[2.1.2b] - 2024-08-16<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Datetime type discrepancies in soul and ghost.</p></li>
+<li><p>Occasional invalid output for categorical variables in Replica.</p></li>
+<li><p>Logical error in previous erratic release.</p></li>
+</ul>
+</li>
+<li><p><strong>Changed:</strong> Dropped json_type option in Generator.load to enforce identical data types.</p></li>
+</ul>
+</section>
+<section id="b-2024-08-09">
+<h2>[2.1.1b] - 2024-08-09<a class="headerlink" href="#b-2024-08-09" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> Option to delete Replica working folder by setting <code class="docutils literal notranslate"><span class="pre">sweep_replica_jobs</span></code> to True in <code class="docutils literal notranslate"><span class="pre">get_replica_risk</span></code>.</p></li>
+</ul>
+</section>
+<section id="b-2024-08-08">
+<h2>[2.1.0b] - 2024-08-08<a class="headerlink" href="#b-2024-08-08" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong></p>
+<ul>
+<li><p>Four more Synthcity generators: “synthcity_nflow”, “synthcity_rtvae”, “synthcity_gogle”, “synthcity_arf”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">do_sweep_replica</span></code> function to delete Replica working folders.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Generator.sweep_replica</span></code> attribute set to True by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Generator.replica_ids</span></code> attribute to retrieve generated replica jobs.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="b-2024-08-06">
+<h2>[2.0.8b] - 2024-08-06<a class="headerlink" href="#b-2024-08-06" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Fixed data type discrepancies between soul and ghosts for Replica.</p></li>
+<li><p><strong>Changed:</strong> Set the default for enforcing json types in Generator.load method to True.</p></li>
+</ul>
+</section>
+<section id="b-2024-08-02">
+<h2>[2.0.7b] - 2024-08-02<a class="headerlink" href="#b-2024-08-02" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Fixed a discrepancy between soul and ghost if a special missing value is defined in the json file and Replica generator is used.</p></li>
+<li><p>Fixed datetime processing.</p></li>
+<li><p>Fixed NaT incompatibility with R.</p></li>
+</ul>
+</li>
+<li><p><strong>Added:</strong> Added suppress_errors attribute to the Generator class to deal with erratic entries in numeric variables as missing values.</p></li>
+<li><p><strong>Changed:</strong> Suppressed warnings.</p></li>
+</ul>
+</section>
+<section id="b-2024-07-31">
+<h2>[2.0.6b] - 2024-07-31<a class="headerlink" href="#b-2024-07-31" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Fixed error when passing a combination of dataframe and json path to Generator.load method.</p></li>
+</ul>
+</section>
+<section id="b-2024-07-30">
+<h2>[2.0.5b] - 2024-07-30<a class="headerlink" href="#b-2024-07-30" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Fixed Replica data type error in encoded ghosts.</p></li>
+<li><p>Updated R installation documentation.</p></li>
+</ul>
+</li>
+<li><p><strong>Added:</strong> Added R usage documentation.</p></li>
+</ul>
+</section>
+<section id="b-2024-07-29">
+<h2>[2.0.4b] - 2024-07-29<a class="headerlink" href="#b-2024-07-29" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Fixed Replica data type discrepancy between soul and ghosts.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>[2.0.3b] - 2024-07-29<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed:</strong> Fixed Replica encoding issue.</p></li>
+</ul>
+</section>
+<section id="b-2024-07-26">
+<h2>[2.0.2b] - 2024-07-26<a class="headerlink" href="#b-2024-07-26" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong></p>
+<ul>
+<li><p>Allowed user to input either a path to the csv file or a Pandas dataframe in Generator.load method.</p></li>
+<li><p>Allowed user to input either a path to the json file or a dictionary in Generator.load method.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="b-2024-07-24">
+<h2>[2.0.1b] - 2024-07-24<a class="headerlink" href="#b-2024-07-24" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> In Generator.load method, added the option of enforcing user-defined datatype as given in the json to both the soul and its ghosts. The default is to use pandas reading defaults.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>[2.0.0b] - 2024-07-24<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Added:</strong> Initial release of pysdg v2 forked from v1.1.14b and based on python 3.10.</p></li>
+<li><p><strong>Changed:</strong></p>
+<ul>
+<li><p>Eliminated the naive_read function and incorporated it into Generator.load method.</p></li>
+<li><p>Unify_na in v2 takes place during loading and not unloading.</p></li>
+<li><p>Generator.train method takes a training subset as an option.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api_ref.html" class="btn btn-neutral float-left" title="5. API reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+
+# Tutorial: Basic usage
+
+**This tutorial demonstrates the core functions of pysdg.** It assumes that pysdg is already installed in a Conda environment. For detailed installation instructions, please consult the pysdg documentation. The following cell sets the working directory to the location of this R Markdown file. It assumes that all files accessed by this R Markdown file are stored in the same directory.
+
+```{r}
+current_dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(current_dir)
+```
+
+For the purpose of this tutorial, we assume that the environment was named `tutorial_env`, so the first step is to activate it:
+
+```{r}
+reticulate::use_condaenv("tutorial_env", required = TRUE)
+```
+
+The core functions include: loading, training, generating and unloading. 
+
+First we import the necessary packages for this tutorial. The last line below imports the generate module from `pysdg`. 
+
+```{r}
+library(readr)
+library(knitr)
+library(jsonlite)
+synth.generate <- reticulate::import("pysdg.synth.generate") 
+```
+
+Two files are necessary to be loaded into pysdg: first the `raw` tabular dataset in CSV format and secondly the corresponding data `info` file in JSON format. The JSON file shall be manually created and it has to include several mandatory keys. Below are the paths to both files:
+
+```{r}
+raw_data_path <- "raw_data.csv" 
+raw_info_path <- "raw_info.json" 
+```
+
+First, let us take a look to the first few rows of the `raw data`.
+
+```{r}
+raw_data <- read_csv(raw_data_path)
+kable(head(raw_data, 10))
+```
+
+Let us also take a look to the data types as interpreted by the default settings of readr. Clearly, these data types can vary depending on the library used for reading the CSV file.
+
+```{r}
+sapply(raw_data, class)
+```
+
+We can see that the `raw data` above includes several representations of missing values, i.e.  `NA`, `NAN, NaT` and `<NA>`. We need to define that in the metadata JSON file. 
+
+We also need to define the data types for all the variables to eliminate the dependency on the library used to read the CSV file. To simplify things, pysdg identifies four basic data types: categorical (`cat`), continuous (`cnt`) , discrete (`dscrt`) and datatime (`datetime`).  Please note that **the categorical variable can be either numbers or alphabets**. In the JSON file, we list all the indexes of the variables under the right data type. Let us take a look to the JSON file that we created earlier for the purpose of this tutorial.
+
+```{r}
+raw_info <- fromJSON(raw_info_path)
+raw_info
+```
+
+As you see above, the dataset is given the name `tutorial_data`. This can be any name. For the time being, we will define empty lists corresponding to the keys `nct_nos`, `id_idx`, `quasi_idxs`. We also keep `h0_value` set to a list of single element which is zero. Let us focus on the remaining keys. The list corresponding to the key `cat_idxs` includes  the indexes of the categorical variables as defined by the user. For instance, the first variable (index 0) in the `raw data`, namely, `outc_cod_0` is defined as categorical, while the third variable (index 2), namely `wt` is defined as continuous.  
+
+We also note that all the occurring missing value representations are listed under `miss_vals`. Adding more representations not existing in the `raw data` is allowed and will have no impact. It is always advisable to include `nan`, `NA` and `''`.
+
+Before loading both the CSV file and its corresponding  JSON file, we need to define a generator object. We pass the name of the desired generator as an argument. You can refer to `pysdg` documentation for a list of the names of available generators. In this tutorial, will use the [bayesian network generator from Synchcity](https://synthcity.readthedocs.io/en/latest/generated/synthcity.plugins.generic.plugin_bayesian_network.html), namely, `synthcity_bayesian_network`.
+
+```{r}
+gen <- synth.generate$Generator("synthcity_bayesian_network")
+```
+
+Now we will load both the `raw data` path and its user-defined `raw info` path using the load method. In return, we will get back a clean `real` data that we can use in our downstream analysis.
+
+```{r}
+real <- gen$load( raw_data_path, raw_info_path) 
+```
+
+The `load` method gives you the option to load the raw dataframe object rather than the raw data path e.g.
+
+```{r}
+real <- gen$load( raw_data, raw_info_path) 
+```
+
+The clean `real data` enforces the data types as per the input `raw info` json file. Lets take a look to that as compared to the data types in the `raw data`. You can see below that all data types match what was defined in the `raw info` jon file. 
+
+```{r}
+sapply(real, class)
+```
+
+Moreover, all the variables in the `real` data will hold missing value representations conforming to their datatype. Let us take a look to teh first rows of `real` data as compared to `raw data`. It is imperative that if the `real` is saved to a CSV file, all missing values will hold a unified representation. 
+
+```{r}
+kable(head(real,10))
+```
+We can further explore what happens with the input `raw info` file. Let us retrieve the `info` from our `gen` object. As you see below, the variable indexes are converted into variable names.
+
+```{r}
+gen$real_info
+```
+
+The `load` method encodes the `real` data to be used for training the desired generator. Let us take a look to the `encoded real` data frame.
+
+```{r}
+kable(head(gen$enc_real,10))
+```
+
+After loading the data, we can start training the desired generator. 
+
+```{r}
+gen$train() 
+```
+
+Once trained, the model can be used to generate the required number of records and synthetic datasets. In the following code line below, we are generating two synthetic datasets, each with the same number of records of the real data set. 
+
+```{r}
+gen$gen(num_rows=nrow(real), num_synths=2) 
+```
+
+The generated synthetic datasets are both encoded. For instance, we can check the first 10 records of the first synthetic dataset using:
+
+```{r}
+kable(head(gen$enc_synths[[1]],10))
+```
+
+The synthetic datasets need to be decoded and we can use `unload` method as the final step to retrieve the list of the generated synthetic data sets, which is called below `synths`.
+
+```{r}
+synths<-gen$unload()
+```
+
+Let us check the first 10 records of the first synthetic data set.
+
+```{r}
+kable(head(synths[[1]],10))
+```
+
+Clearly, the final generated `synthetic` data sets have exactly the same data types and column names and arrangements of the `real` data set.
+
+```{r}
+sapply(synths[[1]], class)
+```
+
+

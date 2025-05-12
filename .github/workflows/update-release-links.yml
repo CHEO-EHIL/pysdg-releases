@@ -1,0 +1,55 @@
+name: Update Release Links
+
+on:
+    push:
+        paths:
+            - 'docs/**'
+    schedule:
+        - cron: '0 0 * * *' # Runs daily at midnight
+    workflow_dispatch: # Allows manual triggering
+
+jobs:
+    update-releases:
+        runs-on: ubuntu-latest
+
+        steps:
+              - name: Checkout repository
+                uses: actions/checkout@v3
+                with:
+                    token: ${{ secrets.GH_PAT }}
+        
+              - name: Set up Python
+                uses: actions/setup-python@v4
+                with:
+                  python-version: '3.x'
+        
+              - name: Update release links
+                run: |
+                  # List all directories in docs/ that match the release pattern
+                  releases=$(ls docs | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+[a-z]*[0-9]*$' | sort -r)
+        
+                  # Generate the new list of release links
+                  links=""
+                  for release in $releases; do
+                      links+=$(printf '<li><a href="%s/index.html">Release %s</a></li>\n' "$release" "${release#v}")
+                  done
+
+        
+                  # Replace the $SELECTION_PLACEHOLDER$ in index.html
+                  if [ -f docs/index.html ]; then
+                    # Replace everything between the markers, but keep markers intact
+                    sed -i '/<!-- START_RELEASE_LINKS -->/,/<!-- END_RELEASE_LINKS -->/c\
+                    <!-- START_RELEASE_LINKS -->\
+                    '"$links"'<!-- END_RELEASE_LINKS -->' docs/index.html
+                  else
+                      echo "Error: docs/index.html does not exist."
+                      exit 1
+                  fi
+        
+              - name: Commit and push changes
+                run: |
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                  git add docs/index.html
+                  git commit -m "Update release links in index.html"
+                  git push
