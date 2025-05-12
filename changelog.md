@@ -1,7 +1,10 @@
 # Changelog
 This file documents the notable changes to this project. Only selected versions are released.
 
-## [2.4.4b2] - 2025-02-07 (**RELEASED - BETA**)
+## [2.7.0] - 2025-05-12
+- **Warning:** This release is **NOT** compatible with previous versions due to module restructuring and function renaming.
+- **Changed** Removed all metrics.
+- **Changed** Restructured package. 
 
 ## [2.6.0b0] - 2025-05-06
 - **Added:** Amazon Tabsyn transformer/diffusion-based generator `amazon/tabsyn`.
