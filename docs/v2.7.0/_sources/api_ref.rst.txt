@@ -1,0 +1,10 @@
+.. _api_ref:
+
+API reference
+=============
+
+.. autoclass:: pysdg.gen.Generator
+
+.. autoclass:: pysdg.optimize.BayesianOptimizationRoutine
+
+
