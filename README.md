@@ -4,7 +4,7 @@ The `pysdg` package is developed by the [Electronic Health Information Laborator
 
 ### Documentation
 
-Comprehensive documentation for the latest version of `pysdg` is available at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/latest/index.html). For documentation related to specific versions, please visit [pysdg releases](https://cheo-ehil.github.io/pysdg-releases/).
+Comprehensive documentation for the latest version of `pysdg` is available at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/v2.7.0/index.html). 
 
 ### Note on Release Versions
 
