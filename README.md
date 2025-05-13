@@ -12,7 +12,14 @@ The latest release of `pysdg` is a stable version and does not include a "b" in 
 
 ### Installation
 
-You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.7.0, run:
+You can install the package by using the appropriate release wheel file available in this repository.  
+
+> ⚠️ **Important Requirement**  
+> This package **requires** Python `3.10.14` and `pip 24.0` to function properly.  
+> Installing with any other Python or pip version **may result in errors or unexpected behavior**.
+>
+
+First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.7.0, run:
 
 ```bash
 pip install pysdg-2.7.0-py3-none-any.whl
