@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Usage &mdash; pysdg 2.5.0rc2.post1.dev30 documentation</title>
+  <title>3. Usage &mdash; pysdg 2.7.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=bc5a8690"></script>
+      <script src="_static/documentation_options.js?v=dfec817d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -95,7 +95,7 @@
 <section id="general-setup">
 <h2><span class="section-number">3.1. </span>General setup<a class="headerlink" href="#general-setup" title="Link to this heading"></a></h2>
 <ol class="arabic">
-<li><p>Your tabular real dataset need to be provided as a <cite>.csv</cite> file. You also need to provide a <cite>json</cite> file describing the dataset variables. Below is an example of typical <cite>json</cite> file:</p>
+<li><p>Your tabular real dataset need to be provided as a <cite>.csv</cite> file. You are encouraged to provide a <cite>json</cite> file describing the dataset variables, although it is optional. Below is an example of typical <cite>json</cite> file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;ds_name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;your_data_name&quot;</span><span class="p">],</span>
     <span class="s2">&quot;nct_nos&quot;</span><span class="p">:[],</span>
@@ -114,7 +114,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Ensure that the <cite>json</cite> file accurately represents the variables in your dataset. All values in the <cite>json</cite> file should be provided as <em>lists</em>, even if they contain only one element. <em>The example indexes shown should be replaced with the appropriate indexes for your dataset</em>. Column indices shall start with 0, so the first column (variable) in the dataset has index <cite>0</cite>, the second column has index <cite>1</cite>, and so forth.</p>
+<p>Ensure that the <cite>json</cite> file accurately represents the variables in your dataset. All values in the <cite>json</cite> file should be provided as <em>lists</em>, even if they contain only one element. <em>The example indexes shown should be replaced with the appropriate indexes for your dataset</em>. Column indices shall start with 0, so the first column (variable) in the dataset has index <cite>0</cite>, the second column has index <cite>1</cite>, and so forth. Check <a class="reference internal" href="api_ref.html#api-ref"><span class="std std-ref">API reference</span></a> for more details on the <cite>json</cite> file.</p>
 </div>
 <p>The full description of the keys in the above <cite>json</cite> file is given below:</p>
 <ul class="simple">

@@ -7,7 +7,7 @@ This guide outlines how to use `pysdg`. The first section details the setup of t
 
 General setup
 *************
-1. Your tabular real dataset need to be provided as a `.csv` file. You also need to provide a `json` file describing the dataset variables. Below is an example of typical `json` file:: 
+1. Your tabular real dataset need to be provided as a `.csv` file. You are encouraged to provide a `json` file describing the dataset variables, although it is optional. Below is an example of typical `json` file:: 
 
     {
         "ds_name": ["your_data_name"],
@@ -24,7 +24,7 @@ General setup
 
 .. note::
 
-    Ensure that the `json` file accurately represents the variables in your dataset. All values in the `json` file should be provided as *lists*, even if they contain only one element. *The example indexes shown should be replaced with the appropriate indexes for your dataset*. Column indices shall start with 0, so the first column (variable) in the dataset has index `0`, the second column has index `1`, and so forth.
+    Ensure that the `json` file accurately represents the variables in your dataset. All values in the `json` file should be provided as *lists*, even if they contain only one element. *The example indexes shown should be replaced with the appropriate indexes for your dataset*. Column indices shall start with 0, so the first column (variable) in the dataset has index `0`, the second column has index `1`, and so forth. Check :ref:`api_ref` for more details on the `json` file.
 
 The full description of the keys in the above `json` file is given below:
 

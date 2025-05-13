@@ -5,7 +5,7 @@ Installation
 
 The `pysdg` library can be used in both `python` or `R`. The package can be installed either using `wheel` file or Docker images.
 
-The Docker images for Python are available at `pysdg Python images <https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-py-pysdg>`_.  while these for R are available at `pysdg R images <https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-r-pysdg-sdgm>`_. The images are tagged with the version of the package.
+The Docker images for Python are available at `pysdg Python images <https://github.com/orgs/CHEO-EHIL/packages/container/package/pysdg%2Fpy>`_.  while these for R are available at `pysdg R images <https://github.com/orgs/CHEO-EHIL/packages/container/package/pysdg%2Fr>`_. The images are tagged with the version of the package.
 
 Follow the steps provided in the `readme file <https://github.com/CHEO-EHIL/pysdg-releases>`_ to install the package using the Docker images.
 

@@ -4,34 +4,23 @@ The `pysdg` package is developed by the [Electronic Health Information Laborator
 
 ### Documentation
 
-Comprehensive documentation for the latest version of `pysdg` is available at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/v2.7.0/index.html). 
-
-### Note on Release Versions
-
-The latest release of `pysdg` is a stable version and does not include a "b" in its release number, indicating it is not a beta release.
+Comprehensive documentation for the latest version of `pysdg` is available at [pysdg documentation](https://cheo-ehil.github.io/pysdg-releases/latest/index.html). For documentation related to specific versions, please visit [pysdg releases](https://cheo-ehil.github.io/pysdg-releases/).
 
 ### Installation
 
-You can install the package by using the appropriate release wheel file available in this repository.  
-
-> ⚠️ **Important Requirement**  
-> This package **requires** Python `3.10.14` and `pip 24.0` to function properly.  
-> Installing with any other Python or pip version **may result in errors or unexpected behavior**.
->
-
-First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.7.0, run:
+You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.7.0, run:
 
 ```bash
 pip install pysdg-2.7.0-py3-none-any.whl
 ```
 
-Alternatively, you can download the relevant Docker image from [pysdg in Jupyter](https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-py-pysdg) for `Python` users and from [pysdg in RStudio](https://github.com/CHEO-EHIL/pysdg-releases/pkgs/container/pysdg%2Fehil-r-pysdg-sdgm) for `R` users.
+Alternatively, you can download the relevant Docker image from [pysdg in Jupyter](https://github.com/orgs/CHEO-EHIL/packages/container/package/pysdg%2Fpy) for `Python` users and from [pysdg in RStudio](https://github.com/orgs/CHEO-EHIL/packages/container/package/pysdg%2Fr) for `R` users.
 
 To install and use the test Docker image, ensure Docker is installed on your machine. For example, to use the latest version of the `pysdg` library in a Jupyter notebook, follow these steps:
 
 ```bash
-docker pull ghcr.io/cheo-ehil/pysdg/ehil-py-pysdg:latest
-docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/ehil-py-pysdg:latest
+docker pull ghcr.io/cheo-ehil/pysdg/py:latest
+docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:latest
 ```
 
 After executing these commands, follow the provided link to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped /your/local/directory to start exploring `pysdg`.
