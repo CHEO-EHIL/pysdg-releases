@@ -1,6 +1,13 @@
 # Changelog
 This file documents the notable changes to this project. Only selected versions are released.
 
+## [2.7.1] - 2025-05-21
+- **Fixed** Error thrown if `quasi_idxs` key is missing from the input `json` info file.
+- **Fixed** Incorrect number of rows generated in `yandex/tabddpm` (#71).
+- **Changed** Eliminated dependency on `tomli_i`
+- **Fixed** `pysdg_vault_path` does not work in `gen.gen()` for `yandex/tabddpm` (#70)
+
+
 ## [2.7.0] - 2025-05-12
 - **Warning:** This release is **NOT** compatible with previous versions due to module restructuring and function renaming.
 - **Changed** Removed all metrics.
