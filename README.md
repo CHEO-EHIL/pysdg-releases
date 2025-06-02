@@ -30,7 +30,7 @@ docker pull ghcr.io/cheo-ehil/pysdg/py:v2.7.1
 docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:v2.7.1
 ```
 
-After executing these commands, follow the provided link (starting with http://127.0.0.1:8888/..)to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped `/your/local/directory` to start exploring `pysdg`. Whatever you copy to your `/your/local/directory` will be saved under `data/` in the container.
+After executing these commands, follow the provided link (typically starting with `http://127.0..`) to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped `/your/local/directory` to start exploring `pysdg`. Whatever you copy to your `/your/local/directory` will be saved under `data/` in the container.
 
 You can also find an RStudio-based image in the same link to the packages.
 
