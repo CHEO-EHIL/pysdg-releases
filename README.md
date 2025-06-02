@@ -8,10 +8,10 @@ Comprehensive documentation for the latest version of `pysdg` is available at [p
 
 ### Installation
 
-You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install `pysdg` v2.7.0, run:
+You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install latest release of `pysdg`, run:
 
 ```bash
-pip install pysdg-2.7.0-py3-none-any.whl
+pip install pysdg-latest-py3-none-any.whl
 ```
 
 Alternatively, you can download the relevant Docker image from [pysdg in Jupyter](https://github.com/orgs/CHEO-EHIL/packages/container/package/pysdg%2Fpy) for `Python` users and from [pysdg in RStudio](https://github.com/orgs/CHEO-EHIL/packages/container/package/pysdg%2Fr) for `R` users.
@@ -19,8 +19,8 @@ Alternatively, you can download the relevant Docker image from [pysdg in Jupyter
 To install and use the test Docker image, ensure Docker is installed on your machine. For example, to use the latest version of the `pysdg` library in a Jupyter notebook, follow these steps:
 
 ```bash
-docker pull ghcr.io/cheo-ehil/pysdg/py:latest
-docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:latest
+docker pull ghcr.io/cheo-ehil/pysdg/py:v2.7.1
+docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:v2.7.1
 ```
 
 After executing these commands, follow the provided link to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped /your/local/directory to start exploring `pysdg`.
