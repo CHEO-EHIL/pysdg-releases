@@ -8,7 +8,14 @@ Comprehensive documentation for the latest version of `pysdg` is available at [p
 
 ### Installation
 
-You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. After downloading the wheel file, you can install it using pip. For example, to install latest release of `pysdg`, run:
+You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. 
+
+> <span style="color:#f0ad4e;"><strong>Note:</strong> To ensure the wheel file installs correctly, please use <strong>Python 3.10.14</strong> and <strong>pip 24.0</strong>. Other versions may not be compatible.</span>
+
+After downloading the wheel file from [the releases page](https://github.com/CHEO-EHIL/pysdg-releases/tree/main/releases), you can install it using pip. 
+
+
+For example, to install the latest release of `pysdg`, run:
 
 ```bash
 pip install pysdg-latest-py3-none-any.whl
@@ -23,7 +30,7 @@ docker pull ghcr.io/cheo-ehil/pysdg/py:v2.7.1
 docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:v2.7.1
 ```
 
-After executing these commands, follow the provided link to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped /your/local/directory to start exploring `pysdg`.
+After executing these commands, follow the provided link (starting with http://127.0.0.1:8888/..)to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped `/your/local/directory` to start exploring `pysdg`. Whatever you copy to your `/your/local/directory` will be saved under `data/` in the container.
 
 You can also find an RStudio-based image in the same link to the packages.
 
