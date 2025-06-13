@@ -1,6 +1,10 @@
 # Changelog
 This file documents the notable changes to this project. Only selected versions are released.
 
+## [2.7.2] - 2025-06-12
+- **Fixed** Automatic deletion of  user's work directory if the model is not saved.
+- **Fixed** Incorrect location of temporary folder for `yandex/tabddpm` when generating from a saved model.
+
 ## [2.7.1] - 2025-05-21
 - **Fixed** Error thrown if `quasi_idxs` key is missing from the input `json` info file.
 - **Fixed** Incorrect number of rows generated in `yandex/tabddpm` (#71).

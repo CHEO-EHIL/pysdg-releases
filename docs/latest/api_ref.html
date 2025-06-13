@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6. API reference &mdash; pysdg 2.7.0 documentation</title>
+  <title>6. API reference &mdash; pysdg 2.7.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=dfec817d"></script>
+      <script src="_static/documentation_options.js?v=4c6c8f0e"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,9 +123,18 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>gen_name</strong> – The name of the generator.</p></li>
+<li><p><strong>gen_name</strong> – The name of the generator. The default is ‘dummy’ which is used either to get the encoded version of the loaded dataframe using the ‘load’ method or to use the a pretrained model from pysdg vault zip file using the ‘gen’ method. If the generator is ‘dummy’ the rest of the arguments are ignored. The other available generators are:</p></li>
+<li><p><strong>'replica/seq'</strong> (<em>-</em>) – Replica sequential generator (You need license to use this generator).</p></li>
+<li><p><strong>'synthcity/bayesian_network'</strong> (<em>-</em>) – SynthCity Bayesian network generator.</p></li>
+<li><p><strong>'synthcity/ctgan'</strong> (<em>-</em>) – SynthCity CTGAN generator.</p></li>
+<li><p><strong>'synthcity/nflow'</strong> (<em>-</em>) – SynthCity Normalizing Flow generator.</p></li>
+<li><p><strong>'synthcity/rtvae'</strong> (<em>-</em>) – SynthCity RTVAE generator.</p></li>
+<li><p><strong>'synthcity/tvae'</strong> (<em>-</em>) – SynthCity TVAE generator.</p></li>
+<li><p><strong>'synthcity/arf'</strong> (<em>-</em>) – SynthCity ARF generator.</p></li>
+<li><p><strong>'yandex/tabddpm'</strong> (<em>-</em>) – Yandex TabDDPM generator.</p></li>
+<li><p><strong>'amazon/tabsyn'</strong> (<em>-</em>) – Amazon TabSyn generator.</p></li>
 <li><p><strong>num_cores</strong> – The maximum number of cores. If None, all available cores will be used. You may need to set that to a specific number for some generators such as the Bayesian network generator in SynthCity.where exploiting all available cores may cause memory issues.</p></li>
-<li><p><strong>work_dir</strong> – User-defined work directory to which some processes may save temporary files and directories. Also, the model artifact will be saved to this directory if needed. By default, this directory is created in the current working directory and it starts with ‘pysdg’.</p></li>
+<li><p><strong>work_dir</strong> – User-defined work directory to which some processes may save temporary files and directories. Also, if ‘save_model’ is set to True,  the model artifact will be saved to this directory. If not provided, by default, this directory is created in the current working directory and it starts with ‘pysdg’.</p></li>
 <li><p><strong>save_model</strong> – A boolean whether or not to save the model artifact. If True, the model artifact will be saved to work_dir. Default is False.</p></li>
 <li><p><strong>log_to_file</strong> – A boolean whether or not to save the log file. If True, the pysdg.log file will be saved to  work_dir. Default is False.</p></li>
 </ul>
@@ -172,7 +181,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pysdg.gen.Generator.unload">
-<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">purge_enabled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.gen.Generator.unload" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.gen.Generator.unload" title="Link to this definition"></a></dt>
 <dd><p>Safely unloads the generated encoded synthetic dataset versions (synths).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -194,15 +203,13 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pysdg.gen.Generator.gen">
-<span class="sig-name descname"><span class="pre">gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_obsvs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pysdg_vault_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.gen.Generator.gen" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_synths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pysdg_vault_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#pysdg.gen.Generator.gen" title="Link to this definition"></a></dt>
 <dd><p>Generates multiple synthetic datasets (synths) from the trained generative model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_rows</strong> – The target number of required records (observations) in the output synthetic data.</p></li>
 <li><p><strong>num_synths</strong> – The target number of required synthetic versions (synths) where each ‘synth’ has the same number of the target num_obsv.</p></li>
-<li><p><strong>no_obsvs</strong> – Deprecated. Use num_rows instead.</p></li>
-<li><p><strong>no_synths</strong> – Deprecated. Use num_synths instead.</p></li>
 <li><p><strong>pysdg_vault_path</strong> – The path to the pysdg vault zip file. If provided, it will load the model from this path instead of using the trained model in memory.</p></li>
 </ul>
 </dd>

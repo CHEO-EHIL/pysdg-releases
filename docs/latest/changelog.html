@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; pysdg 2.7.0 documentation</title>
+  <title>Changelog &mdash; pysdg 2.7.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=dfec817d"></script>
+      <script src="_static/documentation_options.js?v=4c6c8f0e"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -57,7 +57,9 @@
 <p class="caption" role="heading"><span class="caption-text">Extras</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">[2.7.0] - 2025-05-12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">[2.7.2] - 2025-06-12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">[2.7.1] - 2025-05-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">[2.7.0] - 2025-05-12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b0-2025-05-06">[2.6.0b0] - 2025-05-06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc1-2025-04-02">[2.5.0rc1] - 2025-04-02</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc0-2025-04-02">[2.5.0rc0] - 2025-04-02</a></li>
@@ -74,9 +76,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#rc0-2024-09-06">[2.1.6rc0] - 2024-09-06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-08-30">[2.1.6b] - 2024-08-30</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-08-20">[2.1.5b] - 2024-08-20</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">[2.1.4b] - 2024-08-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">[2.1.4b] - 2024-08-20</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-08-16">[2.1.3b] - 2024-08-16</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">[2.1.2b] - 2024-08-16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">[2.1.2b] - 2024-08-16</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-08-09">[2.1.1b] - 2024-08-09</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-08-08">[2.1.0b] - 2024-08-08</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-08-06">[2.0.8b] - 2024-08-06</a></li>
@@ -84,10 +86,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-07-31">[2.0.6b] - 2024-07-31</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-07-30">[2.0.5b] - 2024-07-30</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-07-29">[2.0.4b] - 2024-07-29</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">[2.0.3b] - 2024-07-29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">[2.0.3b] - 2024-07-29</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-07-26">[2.0.2b] - 2024-07-26</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#b-2024-07-24">[2.0.1b] - 2024-07-24</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">[2.0.0b] - 2024-07-24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">[2.0.0b] - 2024-07-24</a></li>
 </ul>
 </li>
 </ul>
@@ -120,7 +122,23 @@
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
 <p>This file documents the notable changes to this project. Only selected versions are released.</p>
 <section id="id1">
-<h2>[2.7.0] - 2025-05-12<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>[2.7.2] - 2025-06-12<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed</strong> Automatic deletion of  user’s work directory if the model is not saved.</p></li>
+<li><p><strong>Fixed</strong> Incorrect location of temporary folder for <code class="docutils literal notranslate"><span class="pre">yandex/tabddpm</span></code> when generating from a saved model.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>[2.7.1] - 2025-05-21<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Fixed</strong> Error thrown if <code class="docutils literal notranslate"><span class="pre">quasi_idxs</span></code> key is missing from the input <code class="docutils literal notranslate"><span class="pre">json</span></code> info file.</p></li>
+<li><p><strong>Fixed</strong> Incorrect number of rows generated in <code class="docutils literal notranslate"><span class="pre">yandex/tabddpm</span></code> (#71).</p></li>
+<li><p><strong>Changed</strong> Eliminated dependency on <code class="docutils literal notranslate"><span class="pre">tomli_i</span></code></p></li>
+<li><p><strong>Fixed</strong> <code class="docutils literal notranslate"><span class="pre">pysdg_vault_path</span></code> does not work in <code class="docutils literal notranslate"><span class="pre">gen.gen()</span></code> for <code class="docutils literal notranslate"><span class="pre">yandex/tabddpm</span></code> (#70)</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>[2.7.0] - 2025-05-12<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Warning:</strong> This release is <strong>NOT</strong> compatible with previous versions due to module restructuring and function renaming.</p></li>
 <li><p><strong>Changed</strong> Removed all metrics.</p></li>
@@ -278,8 +296,8 @@
 <li><p><strong>Changed:</strong> Replaced “soul” by “real” and “ghost” by “synth” in all Generator attributes.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>[2.1.4b] - 2024-08-20<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id4">
+<h2>[2.1.4b] - 2024-08-20<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Fixed:</strong> Error loading the .env file for Replica generator.</p></li>
 </ul>
@@ -295,8 +313,8 @@
 </li>
 </ul>
 </section>
-<section id="id3">
-<h2>[2.1.2b] - 2024-08-16<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id5">
+<h2>[2.1.2b] - 2024-08-16<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Fixed:</strong></p>
 <ul>
@@ -372,8 +390,8 @@
 <li><p><strong>Fixed:</strong> Fixed Replica data type discrepancy between soul and ghosts.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>[2.0.3b] - 2024-07-29<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id6">
+<h2>[2.0.3b] - 2024-07-29<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Fixed:</strong> Fixed Replica encoding issue.</p></li>
 </ul>
@@ -395,8 +413,8 @@
 <li><p><strong>Added:</strong> In Generator.load method, added the option of enforcing user-defined datatype as given in the json to both the soul and its ghosts. The default is to use pandas reading defaults.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2>[2.0.0b] - 2024-07-24<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<section id="id7">
+<h2>[2.0.0b] - 2024-07-24<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Added:</strong> Initial release of pysdg v2 forked from v1.1.14b and based on python 3.10.</p></li>
 <li><p><strong>Changed:</strong></p>

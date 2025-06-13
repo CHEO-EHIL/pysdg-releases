@@ -26,8 +26,8 @@ Alternatively, you can download the relevant Docker image from [pysdg in Jupyter
 To install and use the test Docker image, ensure Docker is installed on your machine. For example, to use the latest version of the `pysdg` library in a Jupyter notebook, follow these steps:
 
 ```bash
-docker pull ghcr.io/cheo-ehil/pysdg/py:v2.7.1
-docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:v2.7.1
+docker pull ghcr.io/cheo-ehil/pysdg/py:v2.7.2
+docker run -p 8888:8888 -v /your/local/directory:/home/jovyan/data --name your-pysdg-image-name ghcr.io/cheo-ehil/pysdg/py:v2.7.2
 ```
 
 After executing these commands, follow the provided link (typically starting with `http://127.0..`) to access the container via your web browser. Next, you can copy the tutorial files from the repository to your mapped `/your/local/directory` to start exploring `pysdg`. Whatever you copy to your `/your/local/directory` will be saved under `data/` in the container.
