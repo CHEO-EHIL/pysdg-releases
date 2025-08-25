@@ -14,11 +14,10 @@ You can install the package by using the appropriate release wheel file availabl
 
 Download the wheel file from [the releases page](https://github.com/CHEO-EHIL/pysdg-releases/releases), and install it using pip. 
 
-
-For example, to install release v2.7.2 of `pysdg`, download its wheel file and run in your activate conda environment:
+You can also install it directly from the url. For example, in your `conda` environment, execute:
 
 ```bash
-pip pysdg-2.7.2-py3-none-any.whl
+pip install https://github.com/CHEO-EHIL/pysdg-releases/releases/download/v2.7.2/pysdg-2.7.2-py3-none-any.whl
 ```
 
 ### Installation using a Docker image
