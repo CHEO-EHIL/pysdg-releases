@@ -8,7 +8,7 @@ Comprehensive documentation for the latest version of `pysdg` is available at [p
 
 ### Installation using a wheel file
 
-You can install the package by using the appropriate release wheel file available in this repository. First, set up the virtual environment as detailed in the documentation. 
+Make sure to set up your virtual environment first, following the steps in the documentation. 
 
 > <span style="color:#f0ad4e;"><strong>Note:</strong> To ensure the wheel file installs correctly, please use <strong>Python 3.10.14</strong> and <strong>pip 24.0</strong>. Other versions may not be compatible.</span>
 
